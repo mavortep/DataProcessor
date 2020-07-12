@@ -13,6 +13,11 @@ namespace DataProcessor.Domain.Strategies
     {
         public MessageHistory Read(string fileName)
         {
+            if (!File.Exists(fileName))
+            {
+                return null;
+            }
+
             var jsonString = File.ReadAllText(fileName, Encoding.UTF8);
 
             return JsonConvert.DeserializeObject<MessageHistory>(jsonString);

@@ -4,6 +4,6 @@ namespace DataProcessor.Contracts.Domain.Services
 {
     public interface IMessageHistoryService
     {
-        MessageHistory Process(string sourceName);
+        MessageHistory Process();
     }
 }
